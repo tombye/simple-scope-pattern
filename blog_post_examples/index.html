@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple accordion</title>
+		<style>
+			.accordionTab {
+				display:block;
+				background:grey;
+				padding:10px;
+				width:280px;
+			}
+			.accordionContent {
+				overflow:hidden;
+				padding:0;
+				margin:0;
+				width:300px;
+			}
+			.accordionContent p {
+				width:258px;
+				padding:20px;
+				border:solid black 1px;
+				margin:0
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<a class="accordionTab">Tab 1</a>
+			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
+		</div>
+		<div>
+			<a class="accordionTab">Tab 2</a>
+			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
+		</div>
+		<div>
+			<a class="accordionTab">Tab 3</a>
+			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
+		</div>
+		<div>
+			<a class="accordionTab">Tab 4</a>
+			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			// hide all accordion content divs
+			$('div.accordionContent').hide();
+
+			// when you click a tab
+			$('a.accordionTab').click(function () {
+			       var $currentActive = $('a.accordionTab').filter('.active');
+			 
+			       // if this tab is active, close its content div
+			       if ($currentActive[0] === this) {
+			              close($(this));
+			       } else {
+			            if ($currentActive.length > 0) {
+			                  close($currentActive);
+			            }
+			            open($(this));
+			       }
+			       return false;
+			});
+			
+			// mark the tab as inactive and hide its content div
+			close = function ($el) {
+			       $el.removeClass('active')
+			              .parent()
+			              .find('.accordionContent')
+			              .slideUp();
+			};
+			
+			// mark the tab as active and show its content
+			open = function ($el) {
+			       $el.addClass('active')
+			              .parent()
+			              .find('.accordionContent')
+			              .slideDown();
+			};
+		</script>
+	</body>
+</html>
