@@ -19,6 +19,8 @@ var pattern = (function () {
 		    onClick;
 		
 		onClick = function (idx) {
+			// idx only exists when onClick runs  
+			// the returned function still has access to this scope whenever it runs
 			return function (eventObj) {
 				if(activeIdx !== null) {
 					that.close();

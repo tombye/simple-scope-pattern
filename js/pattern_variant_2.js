@@ -21,6 +21,8 @@ var pattern = (function () {
 		    onClick;
 		
 		onClick = function (idx) {
+			// idx is only available in this scope as a parameter
+			// it only exists when onClick runs so holds the value onClick is passed
 			return function (eventObj) {
 				if(activeIdx !== null) {
 					// pass private variables through as a parameter

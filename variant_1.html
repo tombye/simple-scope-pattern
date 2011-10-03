@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple accordion</title>
+		<style>
+			.accordionTab {
+				display:block;
+				background:grey;
+				padding:10px;
+				width:280px;
+			}
+			.accordionContent {
+				overflow:hidden;
+				padding:0;
+				margin:0;
+				width:300px;
+			}
+			.accordionContent p {
+				width:258px;
+				padding:20px;
+				border:solid black 1px;
+				margin:0
+			}
+		</style>
+	</head>
+	<body>
+		<div class="accordion">
+			<a class="accordionTab active">Tab 1</a>
+			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
+			<a class="accordionTab">Tab 2</a>
+			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
+			<a class="accordionTab">Tab 3</a>
+			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
+			<a class="accordionTab">Tab 4</a>
+			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/pattern_variant_1.js"></script>
+	</body>
+</html>

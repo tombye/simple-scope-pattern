@@ -3,38 +3,37 @@
 	<head>
 		<title>Simple accordion</title>
 		<style>
-			.accordionTab {
-				display:block;
-				background:grey;
-				padding:10px;
-				width:280px;
+			body {
+				font-size:1;
+				color:#333;
+				font-family:Georgia, Arial, Helvetica, Sans-serif;
 			}
-			.accordionContent {
-				overflow:hidden;
+			h1, ul {
+				margin-left:25%;
+			}
+			h1 {
+				font-size:2.6em;
+				padding-bottom:0.6em;
+			}
+			ul {
+				width:50%;
 				padding:0;
-				margin:0;
-				width:300px;
 			}
-			.accordionContent p {
-				width:258px;
-				padding:20px;
-				border:solid black 1px;
-				margin:0
+			li {
+				list-style:none;
+				text-align:left;
+				font-family:Arial, Helvetica, Sans-serif;
+				margin-bottom:0.6em;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="accordion">
-			<a class="accordionTab active">Tab 1</a>
-			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
-			<a class="accordionTab">Tab 2</a>
-			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
-			<a class="accordionTab">Tab 3</a>
-			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
-			<a class="accordionTab">Tab 4</a>
-			<div class="accordionContent"><p>Some content that sits inside an accordion content area</p></div>
-		</div>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-		<script type="text/javascript" src="js/pattern_variant_2.js"></script>
+		<h1>Simple scope pattern</h1>
+		<ul>
+			<li><a href="base_pattern.html">Base pattern</a></li>
+			<li><a href="variant_1.html">Variant 1</a></li>
+			<li><a href="variant_2.html">Variant 2</a></li>
+			<li><a href="variant_3.html">Variant 3</a></li>
+		</ul>
 	</body>
 </html>
