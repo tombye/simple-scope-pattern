@@ -68,9 +68,7 @@ var pattern = (function () {
 		$contentAreas.eq(activeIdx).show();
 
 		// for each tab, bind a function to its click event which has access to the tab's index
-		while (tabIdx--) {
-			$tabs.eq(tabIdx).bind('click', onClick);
-		}
+		$tabs.bind('click', onClick);
 	};
 
 	return {
