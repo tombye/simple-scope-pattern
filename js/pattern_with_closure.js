@@ -39,18 +39,20 @@ var pattern = (function () {
 		    that = this,
 		    onClick;
 		
-		onClick = function () {
-			var idx = $tabs.index(this);
-			
-			if(activeIdx !== null) {
-				that.close();
-			}
-			if (idx === activeIdx) {
-				activeIdx = null;
-			} else {
-				activeIdx = idx;
-				that.open();
-			}
+		// This function uses closure to create a function with access to the idx at the point it is called
+		onClick = function (idx) {
+			// capture each index using a closure
+			return function (eventObj) {
+				if(activeIdx !== null) {
+					that.close();
+				}
+				if (idx === activeIdx) {
+					activeIdx = null;
+				} else {
+					activeIdx = idx;
+					that.open();
+				}
+			};
 		};
 		
 		// 3. Attach all methods/properties your object will need to 'this'
@@ -69,7 +71,7 @@ var pattern = (function () {
 
 		// for each tab, bind a function to its click event which has access to the tab's index
 		while (tabIdx--) {
-			$tabs.eq(tabIdx).bind('click', onClick);
+			$tabs.eq(tabIdx).bind('click', onClick(tabIdx));
 		}
 	};
 
