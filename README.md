@@ -1,3 +1,3 @@
 *Simple scope pattern*
 
-A variant singleton pattern with multiple options about the scope in which variables can be stored. Used to create objects to hold behaviours for DOM elements.
+A singleton pattern with private constructor used to create objects which store behavioural code for DOM nodes. Purpose is to demonstrate the different options the author has for organising the internal code regards using the different scopes that exist within the pattern. 
